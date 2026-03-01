@@ -1,0 +1,39 @@
+{
+    "name": "chrome-tts-api",
+    "version": "0.1.0",
+    "description": "Chrome Text-to-Speech API wrapper — speak text, list voices, queue utterances, SSML support, and voice preferences for MV3 extensions.",
+    "author": "Zovo <hello@zovo.one>",
+    "license": "MIT",
+    "keywords": [
+        "chrome-extension",
+        "tts",
+        "text-to-speech",
+        "speech",
+        "voice",
+        "chrome-tts",
+        "manifest-v3",
+        "browser-extension",
+        "accessibility",
+        "ssml"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/theluckystrike/chrome-tts-api.git"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "test": "jest",
+        "prepublishOnly": "npm run build"
+    },
+    "devDependencies": {
+        "@types/chrome": "^0.0.260",
+        "typescript": "^5.3.3"
+    }
+}
