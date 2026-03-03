@@ -45,21 +45,31 @@ yarn add chrome-tts-api
 ## Usage
 
 ```javascript
-import { speak } from 'chrome-tts-api';
+import { TTSManager } from 'chrome-tts-api';
+
+// Create a TTS manager instance
+const tts = new TTSManager();
 
 // Speak text
-await speak('Hello, world!');
+await tts.speak('Hello, world!');
 
-// Speed test
-await speak('Speed test', { rate: 2.0 });
+// Speak with options
+await tts.speak('Speed test', { rate: 2.0 });
 
 // Stop speaking
-import { stop } from 'chrome-tts-api';
-await stop();
+tts.stop();
+
+// Pause and resume
+tts.pause();
+tts.resume();
+
+// Check if speaking
+const isSpeaking = await tts.isSpeaking();
 
 // Get available voices
-import { getVoices } from 'chrome-tts-api';
-const voices = await getVoices();
+import { VoiceSelector } from 'chrome-tts-api';
+const selector = new VoiceSelector();
+const voices = await selector.getVoices();
 ```
 
 ### Options
