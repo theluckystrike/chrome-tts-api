@@ -13,7 +13,14 @@
 
 **chrome-tts-api** provides utilities for text-to-speech functionality in Chrome extensions. Part of the Zovo Chrome extension utilities.
 
-Part of the [Zovo](https://zovo.one) developer tools family.
+<p align="center">
+  <a href="https://zovo.one">
+    <img src="https://img.shields.io/badge/Visit-Zovo-orange?style=for-the-badge" alt="Zovo">
+  </a>
+  <a href="https://chrome.google.com/webstore/search/publishers/zovo">
+    <img src="https://img.shields.io/badge/Chrome_Web_Store-18%2B%20Extensions-green?style=for-the-badge" alt="Chrome Web Store">
+  </a>
+</p>
 
 ## Features
 
@@ -27,6 +34,12 @@ Part of the [Zovo](https://zovo.one) developer tools family.
 
 ```bash
 npm install chrome-tts-api
+```
+
+Or with yarn:
+
+```bash
+yarn add chrome-tts-api
 ```
 
 ## Usage
@@ -49,13 +62,24 @@ import { getVoices } from 'chrome-tts-api';
 const voices = await getVoices();
 ```
 
+### Options
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `rate` | `number` | `1.0` | Speech rate (0.1 to 10) |
+| `pitch` | `number` | `1.0` | Speech pitch (0 to 2) |
+| `volume` | `number` | `1.0` | Speech volume (0 to 1) |
+| `voice` | `string` | - | Voice name to use |
+
 ## API
 
 | Method | Description |
 |--------|-------------|
-| `speak(text, options)` | Speak text |
+| `speak(text, options)` | Speak text with optional options |
 | `stop()` | Stop speaking |
 | `getVoices()` | Get available voices |
+| `pause()` | Pause speech |
+| `resume()` | Resume speech |
 
 ## Contributing
 
@@ -69,17 +93,40 @@ Contributions are welcome! Please follow these steps:
 6. **Push** to the branch: `git push origin feature/tts-feature`
 7. **Submit** a Pull Request
 
+### Development
+
+```bash
+# Clone the repository
+git clone https://github.com/theluckystrike/chrome-tts-api.git
+cd chrome-tts-api
+
+# Install dependencies
+npm install
+
+# Run tests
+npm test
+
+# Build
+npm run build
+```
+
 ## See Also
 
 ### Related Zovo Repositories
 
-- [chrome-storage-plus](https://github.com/theluckystrike/chrome-storage-plus) - Type-safe storage
-- [webext-toast-notifications](https://github.com/theluckystrike/webext-toast-notifications) - Notifications
+- [chrome-storage-plus](https://github.com/theluckystrike/chrome-storage-plus) - Type-safe storage wrapper
+- [webext-toast-notifications](https://github.com/theluckystrike/webext-toast-notifications) - Toast notification system
+- [chrome-window-manager](https://github.com/theluckystrike/chrome-window-manager) - Window management utilities
+- [webext-bridge](https://github.com/theluckystrike/webext-bridge) - Message passing between contexts
 
 ### Zovo Chrome Extensions
 
-- [Zovo Tab Manager](https://chrome.google.com/webstore/detail/zovo-tab-manager) - Manage tabs efficiently
-- [Zovo Focus](https://chrome.google.com/webstore/detail/zovo-focus) - Block distractions
+| Extension | Description | Chrome Web Store |
+|-----------|-------------|------------------|
+| [Tab Suspender Pro](https://chrome.google.com/webstore/detail/tab-suspender-pro) | Suspend inactive tabs to save memory | [Install](https://chrome.google.com/webstore/detail/tab-suspender-pro) |
+| [Cookie Manager Pro](https://chrome.google.com/webstore/detail/cookie-manager-pro) | Advanced cookie management | [Install](https://chrome.google.com/webstore/detail/cookie-manager-pro) |
+| [Clipboard History Pro](https://chrome.google.com/webstore/detail/clipboard-history-pro) | Advanced clipboard management | [Install](https://chrome.google.com/webstore/detail/clipboard-history-pro) |
+| [JSON Viewer Pro](https://chrome.google.com/webstore/detail/json-viewer-pro) | Format and explore JSON | [Install](https://chrome.google.com/webstore/detail/json-viewer-pro) |
 
 Visit [zovo.one](https://zovo.one) for more information.
 
