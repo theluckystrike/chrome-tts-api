@@ -1,12 +1,33 @@
-# chrome-tts-api — Text-to-Speech for Chrome Extensions
-> **Built by [Zovo](https://zovo.one)**
+# chrome-tts-api
 
-Speak text, SSML, queue utterances, pause/resume, and select voices. `npm i chrome-tts-api`
+Text-to-Speech API wrapper for Chrome extensions.
 
-```typescript
-import { TTSManager, VoiceSelector } from 'chrome-tts-api';
-const tts = new TTSManager({ rate: 1.2 });
-await tts.speak('Hello world!');
-const voices = await VoiceSelector.getByLanguage('en');
+## Overview
+
+chrome-tts-api provides utilities for text-to-speech functionality in Chrome extensions.
+
+## Installation
+
+```bash
+npm install chrome-tts-api
 ```
-MIT License
+
+## Usage
+
+```javascript
+import { speak } from 'chrome-tts-api';
+
+await speak('Hello, world!');
+
+await speak('Speed test', { rate: 2.0 });
+```
+
+## API
+
+- `speak(text, options)` - Speak text
+- `stop()` - Stop speaking
+- `getVoices()` - Get available voices
+
+## License
+
+MIT
